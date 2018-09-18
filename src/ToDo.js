@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Input from './Input';
+import ListItems from './ListItems';
 
 class ToDo extends Component {
   state = {
-    value: ''
+    value: '',
+    itemToDo: []
   };
 
   handleChange = (event) => {
@@ -11,16 +13,28 @@ class ToDo extends Component {
   }
 
   handleSubmit = (event) => {
-    alert(this.state.value);
+    this.setState((prevState) => {
+      return {itemToDo: prevState.itemToDo.concat(this.state.value)}
+      // callback to make console.log run right after setState with
+      // new data in itemToDo
+    }, () => console.log(this.state.itemToDo));
     event.preventDefault();
   }
+
+
 
   render() {
     return (
       <div>
         <h1>Silly ToDo App</h1>
         <p>Enter an Item To Do Here:</p>
-        <Input value={this.state.value} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <Input 
+          value={this.state.value} 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit} 
+        />
+        <ListItems items={this.state.itemToDo} />
+
       </div>
     );
   }
