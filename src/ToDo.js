@@ -21,7 +21,9 @@ class ToDo extends Component {
     event.preventDefault();
   }
 
-
+  handleClear = (event) => {
+    this.setState({itemToDo: []});
+  }
 
   render() {
     return (
@@ -33,7 +35,10 @@ class ToDo extends Component {
           handleChange={this.handleChange} 
           handleSubmit={this.handleSubmit} 
         />
-        <ListItems items={this.state.itemToDo} />
+        <ListItems 
+          items={this.state.itemToDo} 
+          handleClear={this.handleClear}
+        />
 
       </div>
     );
