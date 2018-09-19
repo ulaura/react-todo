@@ -18,6 +18,7 @@ class ToDo extends Component {
       // callback to make console.log run right after setState with
       // new data in itemToDo
     }, () => console.log(this.state.itemToDo));
+
     event.preventDefault();
   }
 
@@ -30,6 +31,7 @@ class ToDo extends Component {
       <div>
         <h1>Silly ToDo App</h1>
         <p>Enter an Item To Do Here:</p>
+        {/* TODO: Clear the input field after clicking submit */}
         <Input 
           value={this.state.value} 
           handleChange={this.handleChange} 
