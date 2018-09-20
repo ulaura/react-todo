@@ -6,18 +6,31 @@ class ListItems extends Component {
     const items = this.props.items;
     const list = items.length > 0 ? (
       items.map((item, index) => {
-
-        return (
-         <Item key={index} item={item} />
-        );
+        return <Item key={index} item={item} />
       })
     ) : null;
   
     return (
       <div>
-        {list}
-        {/* If a list is produced, this clear button will appear */}
-        {list ? <button onClick={this.props.handleClear}>Clear</button> : null}
+        {/* If list exists, this compenent will render */}
+        {list 
+          ? (
+            <div className="listItems">
+              <div className="listHeader">
+                <span className="itemHeader">Item:</span>
+                <span className="doneHeader">Done?</span> 
+              </div>
+              <div>
+                <span>{list}</span>
+              </div>
+              <button 
+                className="clearButton"
+                onClick={this.props.handleClear}
+              >
+                Clear
+              </button>
+            </div>
+          ) : null}
       </div>
     );
   }

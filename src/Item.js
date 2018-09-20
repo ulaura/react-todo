@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Item extends Component {
   // this component has internal state to
-  // deal with controlling the check box
+  // deal with controlling the checkbox
   state = {
     checked: false
   }
@@ -14,19 +14,23 @@ class Item extends Component {
   render() {
     const item = this.props.item;
     return (
-      <div>
-        <span style=
+      <div className="generatedList">
+        <span 
+          className="item"
+          style=
           {this.state.checked
             ? {textDecoration: "line-through"} 
             : null 
           }>
           {item}
         </span>
-        <input 
-          type="checkbox" 
-          checked={this.state.checked} 
-          onChange={this.handleChecked}
-        />
+        <span className="checkbox">
+          <input 
+            type="checkbox" 
+            checked={this.state.checked} 
+            onChange={this.handleChecked}
+          />
+        </span>
       </div>
     );
   }
