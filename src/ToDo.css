@@ -1,26 +1,51 @@
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .container {
-  border: 3px solid black;
+  /* the scroll will disappear when the border is gone */
+  /* border: 1px solid black;  */
   margin: 0 auto;
+  padding: 0;
+  height: 100%;
   width: 50%;
 }
 
 .innerContents {
   margin: 0 auto;
-  width: 50%;
+  width: 80%;
 }
 
 h1, p, form {
   text-align: center;
 }
 
+h1 {
+  /* vw stands for viewport width */
+  /* 5vw is 5% of the viewport width */
+  margin-top: 0;
+  padding-top: 10px;
+  font-size: 5vw;
+}
+
+p {
+  font-size: 2vw;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
 .listItems {
-  border: 3px solid blue;
+  margin-bottom: 10px;
+  /* border: 3px solid blue; */
 }
 
 .listHeader {
   height: 40px;
   position: relative;
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
 }
 
 .itemHeader, .item {
@@ -28,7 +53,7 @@ h1, p, form {
   float: left;
   width: 40%;
   text-align: center;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 .doneHeader, .checkbox {
@@ -36,21 +61,21 @@ h1, p, form {
   float: right;
   width: 40%;
   text-align: center;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 .generatedList {
   position: relative;
   height: 40px;
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
 }
 
 .item {
-  border: 3px solid brown;
+  /* border: 3px solid brown; */
 }
 
 .checkbox {
-  border: 3px solid skyblue;
+  /* border: 3px solid skyblue; */
 }
 
 .clearButton {
