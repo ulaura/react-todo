@@ -13,13 +13,12 @@ class ToDo extends Component {
   }
 
   handleSubmit = (event) => {
+    event.preventDefault();
     this.setState((prevState) => {
-      return {itemToDo: prevState.itemToDo.concat(this.state.value)}
+      return {value: '', itemToDo: prevState.itemToDo.concat(this.state.value)}
       // callback to make console.log run right after setState with
       // new data in itemToDo
-    }, () => console.log(this.state.itemToDo));
-
-    event.preventDefault();
+    }, () => console.log('item: ', this.state.itemToDo, "value: ", this.state.value));
   }
 
   handleClear = (event) => {
@@ -31,7 +30,9 @@ class ToDo extends Component {
       <div>
         <h1>Silly ToDo App</h1>
         <p>Enter an Item To Do Here:</p>
-        {/* TODO: Clear the input field after clicking submit */}
+        {/* Remember to pass value as a prop to the component Input 
+            so it actually clears when you submit
+        */}
         <Input 
           value={this.state.value} 
           handleChange={this.handleChange} 
